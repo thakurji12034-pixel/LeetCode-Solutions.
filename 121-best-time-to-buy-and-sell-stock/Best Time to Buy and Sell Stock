@@ -1,0 +1,25 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+
+        int minPrice = prices[0];
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+
+            // Minimum buying price find karo
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            }
+
+            // Current profit calculate karo
+            int profit = prices[i] - minPrice;
+
+            // Maximum profit update karo
+            if (profit > maxProfit) {
+                maxProfit = profit;
+            }
+        }
+
+        return maxProfit;
+    }
+}
